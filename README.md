@@ -1,4 +1,4 @@
-# ZS Ops — Company Knowledge Base
+﻿# ZS Ops - Company Knowledge Base
 
 This repository is the single source of truth for how we run the company: **deliverability**, **copywriting**, and **research**.
 
@@ -16,14 +16,18 @@ This repository is the single source of truth for how we run the company: **deli
 | [docs/copywriting/](docs/copywriting/) | Copywriting standards and guidelines |
 | [docs/research/](docs/research/) | Research methodology and standards |
 
-## Adding content
+## Storage standard
 
-- **PDFs:** Place them in the appropriate folder (e.g. deliverability SOP in `docs/deliverability/`). GitHub will render them so they're viewable and linkable.
-- **Markdown:** Prefer `.md` for new docs when possible; it's easy to read in the repo and for tools to parse.
+Store knowledge-base material in text format only.
+
+- Use `.md` by default.
+- If material is uploaded as PDF, Word, slides, or another binary format, convert it into Markdown or plain text before storing it in the repo.
+- Keep files readable by humans and easy to parse by tools.
 
 ## Getting started
 
-1. **Deliverability SOP:** Put your deliverability SOP PDF in [docs/deliverability/](docs/deliverability/) and optionally add a short `README.md` there summarizing it or linking to the PDF.
-2. Commit and push to GitHub so the knowledge base stays up to date.
+1. Add content to the relevant folder under `docs/`.
+2. Convert uploads into Markdown or plain text before storing them.
+3. Commit and push to GitHub so the knowledge base stays up to date.
 
 When you ask questions about deliverability, copywriting, or research, answers can be based on the files in this repo.
