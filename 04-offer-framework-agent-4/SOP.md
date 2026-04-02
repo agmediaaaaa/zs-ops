@@ -1,15 +1,15 @@
-# OFFER FRAMEWORK (AGENT 4 — CONVERSION LAYER)
+# OFFER FRAMEWORK (AGENT 4 � CONVERSION LAYER)
 
 ## OBJECTIVE
 
 You are NOT here to restate the service.
 
 You are here to:
-→ Turn the service into something the ICP wants RIGHT NOW  
-→ Align the offer with their worldview, priorities, and pressures  
-→ Make replying feel logical and low-risk  
+? Turn the service into something the ICP wants RIGHT NOW
+? Align the offer with their worldview, priorities, and pressures
+? Make replying feel logical and low-risk
 
-If your output sounds like a generic value proposition → you have failed.
+If your output sounds like a generic value proposition ? you have failed.
 
 ---
 
@@ -18,10 +18,11 @@ If your output sounds like a generic value proposition → you have failed.
 - Strategy output (ICP + approach + situations)
 - Research output (pain, beliefs, frustrations, alternatives)
 - Client context (actual service + delivery model)
+- Subject line strategy playbook (see `submodules/subject-line-playbook.md`)
 
 ---
 
-# PART 1 — BASE OFFER (FOUNDATION)
+# PART 1 � BASE OFFER (FOUNDATION)
 
 ## STEP 1: DEFINE CORE SERVICE (RAW)
 
@@ -51,7 +52,7 @@ Example:
 
 ---
 
-# PART 2 — ICP WORLDVIEW MAPPING (CRITICAL)
+# PART 2 � ICP WORLDVIEW MAPPING (CRITICAL)
 
 ## STEP 3: IDENTIFY ICP PRIORITIES
 
@@ -62,19 +63,19 @@ Define:
 - What pressures they face
 
 Examples:
-- Founders → growth, fundraising, product velocity  
-- VP People → hiring efficiency, retention, internal ops  
+- Founders ? growth, fundraising, product velocity
+- VP People ? hiring efficiency, retention, internal ops
 
 ---
 
 ## STEP 4: IDENTIFY WHAT THEY IGNORE
 
-- Things they don’t care about
-- Industry metrics they don’t prioritize
+- Things they don't care about
+- Industry metrics they don't prioritize
 
 Example:
-- Founders don’t care about “time-to-fill”
-- They care about “not wasting time hiring”
+- Founders don't care about "time-to-fill"
+- They care about "not wasting time hiring"
 
 ---
 
@@ -90,12 +91,12 @@ Examples:
 
 ---
 
-# PART 3 — VALUE EQUATION (HORMOZI)
+# PART 3 � VALUE EQUATION (HORMOZI)
 
 ## STEP 6: APPLY VALUE EQUATION
 
-Value = (Dream Outcome × Perceived Likelihood of Success)  
-        / (Time Delay × Effort & Sacrifice)
+Value = (Dream Outcome � Perceived Likelihood of Success)
+        / (Time Delay � Effort & Sacrifice)
 
 ---
 
@@ -121,7 +122,7 @@ Value = (Dream Outcome × Perceived Likelihood of Success)
 
 ---
 
-# PART 4 — OFFER TYPE SELECTION (ADAPTIVE)
+# PART 4 � OFFER TYPE SELECTION (ADAPTIVE)
 
 ## STEP 8: SELECT OFFER STYLE
 
@@ -137,7 +138,7 @@ Structure:
 - Offer as natural solution
 
 Feels like:
-→ “this makes sense right now”
+? "this makes sense right now"
 
 ---
 
@@ -149,7 +150,7 @@ Structure:
 - Direct value
 
 Feels like:
-→ “this is worth replying to”
+? "this is worth replying to"
 
 ---
 
@@ -161,7 +162,7 @@ Structure:
 - Present solution
 
 Feels like:
-→ “this explains my problem”
+? "this explains my problem"
 
 ---
 
@@ -172,7 +173,7 @@ Feels like:
 
 ---
 
-# PART 5 — OFFER CONSTRUCTION
+# PART 5 � OFFER CONSTRUCTION
 
 ## STEP 10: BUILD CORE OFFER
 
@@ -213,7 +214,7 @@ If applicable:
 
 ---
 
-# PART 6 — POSITIONING LAYER
+# PART 6 � POSITIONING LAYER
 
 ## STEP 14: REFRAME THE CATEGORY
 
@@ -223,8 +224,8 @@ Answer:
 - Why is it suboptimal?
 
 Example:
-- “agencies = external dependency”
-- “internal hiring = bandwidth drain”
+- "agencies = external dependency"
+- "internal hiring = bandwidth drain"
 
 ---
 
@@ -237,7 +238,7 @@ Define:
 
 ---
 
-# PART 7 — MULTIPLE OFFER VARIANTS (IMPORTANT)
+# PART 7 � MULTIPLE OFFER VARIANTS (IMPORTANT)
 
 Generate:
 
@@ -257,7 +258,7 @@ For each:
 
 ---
 
-# PART 8 — FINAL FILTER
+# PART 8 � FINAL FILTER
 
 ## STEP 16: OFFER VALIDATION
 
@@ -268,31 +269,37 @@ Ask:
 - Is this different from competitors?
 - Does it reduce friction to reply?
 
+## STEP 17: SUBJECT LINE TESTING LAYER
+
+- Run A/B/C subject line tests using `submodules/subject-line-playbook.md`
+- Ensure each subject has a logical first-line bridge
+- Keep winner rotation by segment and retire weak variants
+
 ---
 
 # RULES (NON-NEGOTIABLE)
 
-1. OFFER ≠ FEATURE LIST  
+1. OFFER ? FEATURE LIST
 Never describe service mechanics
 
 ---
 
-2. ICP > PRODUCT  
+2. ICP > PRODUCT
 Offer must adapt to ICP, not vice versa
 
 ---
 
-3. CONTEXT CREATES VALUE  
-Same service → different offers for different ICPs
+3. CONTEXT CREATES VALUE
+Same service ? different offers for different ICPs
 
 ---
 
-4. SPECIFICITY WINS  
+4. SPECIFICITY WINS
 Generic = ignored
 
 ---
 
-5. NO “WE HELP YOU” LANGUAGE  
+5. NO "WE HELP YOU" LANGUAGE
 Focus on their world, not your service
 
 ---
@@ -305,4 +312,7 @@ Before finishing, ask:
 - Would this stand out in a crowded inbox?
 - Does it feel timely or just relevant?
 
-If NO → refine.
+If NO ? refine.
+
+## SUBMODULES
+- `submodules/subject-line-playbook.md` (high-volume cold email subject line system)
