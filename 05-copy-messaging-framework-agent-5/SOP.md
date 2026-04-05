@@ -23,6 +23,7 @@ If it feels like:
 - Strategy Output (ICP + approach)
 - Research Output (beliefs, frustrations, behaviors)
 - For cold email: apply `SOP-spam-guard.md` (banned tokens, rewrites, final scan)
+- For PlusVibe sequences: apply `SOP-plusvibe-templating.md` (Liquid, spintax, day/date variables; links to official guides are in that file)
 
 ---
 

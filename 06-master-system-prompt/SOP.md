@@ -189,6 +189,20 @@ If any are missing:
 
 ---
 
+## PLUSVIBE OUTPUT (WHEN APPLICABLE)
+
+If the client ships copy through **PlusVibe**, follow `05-copy-messaging-framework-agent-5/SOP-plusvibe-templating.md` in addition to the copy and spam-guard SOPs.
+
+**Contract in short:**
+
+- **Plain text:** merge fields use `{{field_name}}`. **Inside Liquid** `{% %}`, use bare names (`field_name`), not double braces.
+- **Spintax:** `{{random|a|b|c}}`; **one** `{{variable}}` per random block; `{{fallback|{{field}}|default}}` for empties; `||` for optional blank segments.
+- **Day/time:** `{{pipl_time_of_day}}`, `{{pipl_day_of_week}}`, `{{pipl_date ...}}` including `now_wd` for weekday shifts and locale suffixes per docs.
+
+Authoritative detail and examples: [Liquid](https://help.plusvibe.ai/en/articles/10748974-liquid-syntax-guide-for-plusvibe), [Spintax](https://help.plusvibe.ai/en/articles/8606174-spintax-guide), [Day variables](https://help.plusvibe.ai/en/articles/9735657-day-variables-guide).
+
+---
+
 ## PRIORITY STACK
 
 1. Worldview match  
