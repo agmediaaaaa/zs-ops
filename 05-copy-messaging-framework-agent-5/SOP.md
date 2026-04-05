@@ -22,6 +22,7 @@ If it feels like:
 - Offer Framework Output (MANDATORY)
 - Strategy Output (ICP + approach)
 - Research Output (beliefs, frustrations, behaviors)
+- For cold email: apply `SOP-spam-guard.md` (banned tokens, rewrites, final scan)
 
 ---
 
