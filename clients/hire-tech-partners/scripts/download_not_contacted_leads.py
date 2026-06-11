@@ -56,6 +56,34 @@ def load_dotenv(path: Path) -> None:
         os.environ.setdefault(key.strip(), value.strip().strip('"').strip("'"))
 
 
+def find_repo_root(script_path: Path) -> Path | None:
+    for parent in (script_path.parent, *script_path.parents):
+        if (parent / ".git").exists() or (parent / ".env").exists():
+            return parent
+    return None
+
+
+def default_output_dir(script_path: Path) -> Path:
+    repo_root = find_repo_root(script_path)
+    if repo_root:
+        client_exports = repo_root / "clients" / "hire-tech-partners" / "exports"
+        if client_exports.parent.exists():
+            return client_exports
+    return Path.cwd() / "plusvibe-exports"
+
+
+def load_env_files(script_path: Path) -> None:
+    for path in (
+        Path.cwd() / ".env",
+        Path.cwd() / ".env.local",
+    ):
+        load_dotenv(path)
+    repo_root = find_repo_root(script_path)
+    if repo_root:
+        load_dotenv(repo_root / ".env")
+        load_dotenv(repo_root / ".env.local")
+
+
 def api_request(api_key: str, method: str, path: str, params: dict[str, Any] | None = None) -> Any:
     query = f"?{urlencode(params)}" if params else ""
     request = Request(
@@ -179,9 +207,8 @@ def write_csv(path: Path, leads: list[dict[str, Any]]) -> None:
 
 
 def main() -> int:
-    repo_root = Path(__file__).resolve().parents[3]
-    load_dotenv(repo_root / ".env")
-    load_dotenv(repo_root / ".env.local")
+    script_path = Path(__file__).resolve()
+    load_env_files(script_path)
 
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--api-key", default=os.environ.get("PLUSVIBE_API_KEY"))
@@ -189,7 +216,7 @@ def main() -> int:
     parser.add_argument(
         "--output-dir",
         type=Path,
-        default=Path(__file__).resolve().parents[1] / "exports",
+        default=default_output_dir(script_path),
     )
     parser.add_argument(
         "--output",
