@@ -60,7 +60,11 @@ def api_request(api_key: str, method: str, path: str, params: dict[str, Any] | N
     request = Request(
         f"{API_BASE}{path}{query}",
         method=method,
-        headers={"x-api-key": api_key, "Accept": "application/json"},
+        headers={
+            "x-api-key": api_key,
+            "Accept": "application/json",
+            "User-Agent": "zs-ops-plusvibe-export/1.0",
+        },
     )
     try:
         with urlopen(request, timeout=60) as response:
