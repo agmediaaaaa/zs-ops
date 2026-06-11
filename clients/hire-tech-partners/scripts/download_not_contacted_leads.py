@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import os
+import subprocess
 import sys
 import time
 from datetime import datetime, timezone
@@ -190,6 +191,16 @@ def main() -> int:
         type=Path,
         default=Path(__file__).resolve().parents[1] / "exports",
     )
+    parser.add_argument(
+        "--output",
+        type=Path,
+        help="Write CSV to this exact file path instead of exports/ with a timestamp.",
+    )
+    parser.add_argument(
+        "--open",
+        action="store_true",
+        help="Open the CSV after export (Numbers on macOS, default app elsewhere).",
+    )
     parser.add_argument("--per-campaign", action="store_true", help="Fetch leads campaign-by-campaign.")
     args = parser.parse_args()
 
@@ -229,36 +240,46 @@ def main() -> int:
 
     timestamp = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
     slug = workspace_name.lower().replace(" ", "-")
-    csv_path = args.output_dir / f"{slug}-not-contacted-leads-{timestamp}.csv"
-    json_path = args.output_dir / f"{slug}-not-contacted-leads-{timestamp}.json"
+    csv_path = args.output or (args.output_dir / f"{slug}-not-contacted-leads-{timestamp}.csv")
+    csv_path.parent.mkdir(parents=True, exist_ok=True)
 
     write_csv(csv_path, all_leads)
-    json_path.write_text(json.dumps(all_leads, indent=2), encoding="utf-8")
-
-    summary = {
-        "workspace_id": args.workspace_id,
-        "workspace_name": workspace_name,
-        "campaign_count": len(campaigns),
-        "not_contacted_count": len(all_leads),
-        "exported_at": datetime.now(timezone.utc).isoformat(),
-        "csv_path": str(csv_path),
-        "json_path": str(json_path),
-        "campaigns": [
-            {
-                "id": campaign.get("id") or campaign.get("_id"),
-                "name": campaign.get("camp_name"),
-                "status": campaign.get("status"),
-                "lead_count": campaign.get("lead_count"),
-            }
-            for campaign in campaigns
-        ],
-    }
-    summary_path = args.output_dir / f"{slug}-not-contacted-summary-{timestamp}.json"
-    summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
-
     print(f"Wrote CSV: {csv_path}")
-    print(f"Wrote JSON: {json_path}")
-    print(f"Wrote summary: {summary_path}")
+    print(f"Rows: {len(all_leads)}")
+
+    if not args.output:
+        json_path = args.output_dir / f"{slug}-not-contacted-leads-{timestamp}.json"
+        json_path.write_text(json.dumps(all_leads, indent=2), encoding="utf-8")
+
+        summary = {
+            "workspace_id": args.workspace_id,
+            "workspace_name": workspace_name,
+            "campaign_count": len(campaigns),
+            "not_contacted_count": len(all_leads),
+            "exported_at": datetime.now(timezone.utc).isoformat(),
+            "csv_path": str(csv_path),
+            "json_path": str(json_path),
+            "campaigns": [
+                {
+                    "id": campaign.get("id") or campaign.get("_id"),
+                    "name": campaign.get("camp_name"),
+                    "status": campaign.get("status"),
+                    "lead_count": campaign.get("lead_count"),
+                }
+                for campaign in campaigns
+            ],
+        }
+        summary_path = args.output_dir / f"{slug}-not-contacted-summary-{timestamp}.json"
+        summary_path.write_text(json.dumps(summary, indent=2), encoding="utf-8")
+        print(f"Wrote JSON: {json_path}")
+        print(f"Wrote summary: {summary_path}")
+
+    if args.open:
+        if sys.platform == "darwin":
+            subprocess.run(["open", "-a", "Numbers", str(csv_path)], check=False)
+        else:
+            subprocess.run(["xdg-open", str(csv_path)], check=False)
+
     return 0
 
 
