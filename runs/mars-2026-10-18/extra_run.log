@@ -1,0 +1,92 @@
+Loaded 5596 suppression domains
+Loaded 7004 suppression emails
+Loaded 6992 suppression LinkedIn URLs
+799 existing leads, 799 domains, 20 queries
+treg balance $6.8846  (spent so far $3.1996 of $5.00)
+free count: 1260 rows -> search est $0.479; run cap $1.700
+   ('Seg1', '10-199', 0) 72
+   ('Seg1', '10-199', 1) 70
+   ('Seg1', '10-199', 2) 87
+   ('Seg1', '10-199', 3) 83
+   ('Seg1', '200-499', 0) 95
+   ('Seg2', '10-199', 0) 32
+   ('Seg2', '10-199', 1) 38
+   ('Seg2', '10-199', 2) 29
+   ('Seg2', '10-199', 3) 40
+   ('Seg2', '200-499', 0) 33
+   ('Seg3_A', '10-199', 0) 40
+   ('Seg3_A', '10-199', 1) 27
+   ('Seg3_A', '10-199', 2) 28
+   ('Seg3_A', '10-199', 3) 31
+   ('Seg3_A', '200-499', 0) 34
+   ('Seg4', '10-199', 0) 106
+   ('Seg4', '10-199', 1) 115
+   ('Seg4', '10-199', 2) 127
+   ('Seg4', '10-199', 3) 107
+   ('Seg4', '200-499', 0) 66
+pulled 1260 rows, search cost $0.4788
+after hygiene: 224 extra people; skips {'already_in_list': 835, 'suppressed_linkedin': 49, 'no_name': 1, 'suppressed_domain': 137, 'dupe_linkedin': 13, 'title': 1}
+
+Enriching 224 leads...
+Cache hits: 2 / 224
+  Progress: 50/224 leads enriched
+  Progress: 100/224 leads enriched
+  Progress: 150/224 leads enriched
+  Progress: 200/224 leads enriched
+
+Running MailboxValidator on 224 leads...
+  MV progress: 50/224
+  MV progress: 100/224
+  MV progress: 150/224
+  MV progress: 200/224
+{
+  "queries": 20,
+  "rows_pulled": 1260,
+  "after_hygiene": 224,
+  "skips": {
+    "already_in_list": 835,
+    "suppressed_linkedin": 49,
+    "no_name": 1,
+    "suppressed_domain": 137,
+    "dupe_linkedin": 13,
+    "title": 1
+  },
+  "emails_found": 160,
+  "stats": {
+    "total_leads": 0,
+    "cache_hits": 2,
+    "pattern_found": 4,
+    "contactout_found": 4,
+    "blitz_found": 100,
+    "quickenrich_found": 29,
+    "trykitt_found": 25,
+    "mv_calls": 158,
+    "mv_valid": 110,
+    "mv_catchall": 33,
+    "mv_invalid": 17,
+    "cost_by_provider": {
+      "icypeas": 0.4788,
+      "blitz": 0.04950000000000006,
+      "quickenrich": 0.14018600000000006,
+      "trykitt": 0.12500000000000003,
+      "millionverifier": 0.19224000000000022
+    },
+    "total_spent_usd": 0.0
+  },
+  "valid": 110,
+  "catchall": 33,
+  "valid_by_segment": {
+    "Seg1": 32,
+    "Seg2": 11,
+    "Seg3_A": 13,
+    "Seg4": 54
+  },
+  "valid_by_source": {
+    "pattern+contactout": 4,
+    "blitz": 75,
+    "trykitt": 6,
+    "cache": 2,
+    "quickenrich": 23
+  },
+  "run_spent_usd": 0.985726
+}

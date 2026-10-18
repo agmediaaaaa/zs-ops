@@ -1,0 +1,59 @@
+{
+  "start_balance": 10.08418,
+  "end_balance": 9.03576,
+  "segments": {
+    "Seg1": {
+      "raw": 1251,
+      "clean": 260,
+      "skips": {
+        "suppressed_domain": 217,
+        "suppressed_linkedin": 601,
+        "no_domain": 13,
+        "title": 98,
+        "dupe_domain": 57,
+        "no_name": 4,
+        "division_subsidiary": 1
+      }
+    },
+    "Seg2": {
+      "raw": 328,
+      "clean": 112,
+      "skips": {
+        "suppressed_domain": 36,
+        "suppressed_linkedin": 112,
+        "dupe_domain": 26,
+        "no_domain": 5,
+        "title": 35,
+        "no_name": 2
+      }
+    },
+    "Seg3_A": {
+      "raw": 326,
+      "clean": 105,
+      "skips": {
+        "suppressed_linkedin": 110,
+        "suppressed_domain": 50,
+        "dupe_domain": 24,
+        "division_subsidiary": 1,
+        "no_name": 2,
+        "title": 34
+      }
+    },
+    "Seg4": {
+      "raw": 854,
+      "clean": 382,
+      "skips": {
+        "suppressed_domain": 87,
+        "suppressed_linkedin": 222,
+        "dupe_domain": 84,
+        "no_domain": 11,
+        "title": 68
+      }
+    }
+  },
+  "cost_by_provider": {
+    "icypeas": 1.0484200000000004
+  },
+  "emails_by_source": {},
+  "mv_status": {}
+}

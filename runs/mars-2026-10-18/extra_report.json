@@ -1,0 +1,51 @@
+{
+  "queries": 20,
+  "rows_pulled": 1260,
+  "after_hygiene": 224,
+  "skips": {
+    "already_in_list": 835,
+    "suppressed_linkedin": 49,
+    "no_name": 1,
+    "suppressed_domain": 137,
+    "dupe_linkedin": 13,
+    "title": 1
+  },
+  "emails_found": 160,
+  "stats": {
+    "total_leads": 0,
+    "cache_hits": 2,
+    "pattern_found": 4,
+    "contactout_found": 4,
+    "blitz_found": 100,
+    "quickenrich_found": 29,
+    "trykitt_found": 25,
+    "mv_calls": 158,
+    "mv_valid": 110,
+    "mv_catchall": 33,
+    "mv_invalid": 17,
+    "cost_by_provider": {
+      "icypeas": 0.4788,
+      "blitz": 0.04950000000000006,
+      "quickenrich": 0.14018600000000006,
+      "trykitt": 0.12500000000000003,
+      "millionverifier": 0.19224000000000022
+    },
+    "total_spent_usd": 0.0
+  },
+  "valid": 110,
+  "catchall": 33,
+  "valid_by_segment": {
+    "Seg1": 32,
+    "Seg2": 11,
+    "Seg3_A": 13,
+    "Seg4": 54
+  },
+  "valid_by_source": {
+    "pattern+contactout": 4,
+    "blitz": 75,
+    "trykitt": 6,
+    "cache": 2,
+    "quickenrich": 23
+  },
+  "run_spent_usd": 0.985726
+}

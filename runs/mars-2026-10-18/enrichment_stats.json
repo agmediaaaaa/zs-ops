@@ -1,0 +1,19 @@
+{
+  "total_leads": 799,
+  "cache_hits": 0,
+  "pattern_found": 13,
+  "contactout_found": 13,
+  "blitz_found": 426,
+  "quickenrich_found": 130,
+  "trykitt_found": 51,
+  "mv_calls": 620,
+  "mv_valid": 443,
+  "mv_catchall": 133,
+  "mv_invalid": 44,
+  "cost_by_provider": {
+    "blitz": 0.21086999999999875,
+    "trykitt": 0.005,
+    "millionverifier": 0.8455000000000016
+  },
+  "total_spent_usd": 1.06137
+}
