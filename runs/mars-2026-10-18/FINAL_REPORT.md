@@ -238,3 +238,29 @@ Location: `/workspace/zs-ops2/runs/mars-2026-10-18/`
 **Report generated:** 2026-10-18  
 **Branch:** cursor/mars-usa-mfg-oct18-863f  
 **Author:** Cursor Cloud Agent
+
+---
+
+## Addendum: one-person-per-company removed, extras added
+
+The per-company limit was removed (LinkedIn and email dedupe kept). While doing this I found and fixed a bug in the first pass:
+the founder/owner title check was applied to the 200-499 band too, which dropped all of its operations-title people
+(Plant Manager, Director of Operations, GM). Those 228 people were pulled in the first search but never kept.
+
+**Search (script `scripts/mars_extra.py`)**
+- 10-199 band: approved segment queries restricted to the 799 company domains already in the list
+- 200-499 band: approved segment queries, unrestricted, operations titles
+- Free count first: 1,260 rows, then 1,260 pulled (about $0.48)
+- After suppression, hygiene, already-in-list and LinkedIn dedupe: 224 people (174 from 10-199, 50 from 200-499)
+
+**Results**
+- Emails found: 160 (cache 2, pattern+ContactOut 4, Blitz 100, QuickEnrich 29, TryKitt 25)
+- MV: 110 valid, 33 catch-all, 17 invalid
+- After dropping 14 emails already in the list or repeated: 97 valid, 32 catch-all
+- Valid by segment: Seg1 30, Seg2 9, Seg3 13, Seg4 45
+- Cost: Icypeas 0.479, Blitz 0.050, QuickEnrich 0.140, TryKitt 0.125, MillionVerifier 0.192 (about $1.03 for the run)
+
+**Totals for the whole list**
+- Valid 540 (443 + 97), catch-all 165 (133 + 32): `mars_usa_valid_ALL.csv`, `mars_usa_catchall_ALL.csv`
+- Spend $4.225 of the $5.00 cap. treg balance 10.084 -> 5.859
+- Supabase list `ed9fbb72-4b84-42c2-8dc8-f20f6dbc734a`: 705 members, 705 pipeline_leads (540 ready, 165 excluded as catch-all)
