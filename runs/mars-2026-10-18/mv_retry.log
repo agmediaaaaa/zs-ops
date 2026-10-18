@@ -1,0 +1,13 @@
+Loading enriched leads...
+Found 0 leads with emails
+Starting MV verification (budget: $2.86)...
+
+================================================================================
+MV VERIFICATION COMPLETE
+================================================================================
+MV calls: 0
+Valid: 0
+Catch-all: 0
+Invalid: 0
+Cost: $0.00
+Stats: /workspace/zs-ops2/runs/mars-2026-10-18/mv_retry_stats.json

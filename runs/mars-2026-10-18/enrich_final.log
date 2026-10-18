@@ -1,0 +1,70 @@
+================================================================================
+MARS Enrichment Pipeline
+================================================================================
+Loaded 799 leads from /workspace/zs-ops2/runs/mars-2026-10-18/leads_pre_enrich.jsonl
+Treg balance: $7.95
+
+
+Enriching 799 leads...
+Cache check error: Invalid header value b'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wa2RoYWhkdmlsY2N0and6ZGxmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Mjc1OTAyNywiZXhwIjoyMDY4MzM1MDI3fQ.LzbvCFk3MTCdbwTU4vZX4FToNXF5IyAdap7VJ4IOoT8\n\n'
+Cache hits: 0 / 799
+  Progress: 50/799 leads enriched
+  Progress: 100/799 leads enriched
+  Progress: 150/799 leads enriched
+  Progress: 200/799 leads enriched
+  Progress: 250/799 leads enriched
+  Progress: 300/799 leads enriched
+  Progress: 350/799 leads enriched
+  Progress: 400/799 leads enriched
+  Progress: 450/799 leads enriched
+  Progress: 500/799 leads enriched
+  Progress: 550/799 leads enriched
+  Progress: 600/799 leads enriched
+  Progress: 650/799 leads enriched
+  Progress: 700/799 leads enriched
+  Progress: 750/799 leads enriched
+
+Running MailboxValidator on 799 leads...
+  MV progress: 50/799
+  MV progress: 100/799
+  MV progress: 150/799
+  MV progress: 200/799
+  MV progress: 250/799
+  MV progress: 300/799
+  MV progress: 350/799
+  MV progress: 400/799
+  MV progress: 450/799
+  MV progress: 500/799
+  MV progress: 550/799
+  MV progress: 600/799
+  MV progress: 650/799
+  MV progress: 700/799
+  MV progress: 750/799
+
+Wrote 443 valid leads to /workspace/zs-ops2/runs/mars-2026-10-18/mars_usa_valid.csv
+Wrote 133 catch-all leads to /workspace/zs-ops2/runs/mars-2026-10-18/mars_usa_catchall.csv
+
+================================================================================
+ENRICHMENT COMPLETE
+================================================================================
+
+Spent: $1.06 / $3.95 cap
+
+Email sources:
+  Cache hits: 0
+  Pattern+ContactOut: 13
+  Blitz: 426
+  QuickEnrich: 130
+  TryKitt: 51
+
+MailboxValidator:
+  Valid: 443
+  Catch-all: 133
+  Invalid: 44
+
+Cost by provider:
+  blitz: $0.2109
+  millionverifier: $0.8455
+  trykitt: $0.0050
+
+Stats: /workspace/zs-ops2/runs/mars-2026-10-18/enrichment_stats.json
