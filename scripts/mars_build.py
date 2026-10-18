@@ -233,6 +233,8 @@ def parse_lead(raw: dict, seg_key: str, band_key: str) -> dict:
         "size": raw.get("lastCompanySize"),
         "industry": raw.get("lastCompanyIndustry"),
         "location": raw.get("address"),
+        "company_description": (raw.get("lastCompanyDescription") or "").strip(),
+        "company_address": (raw.get("lastCompanyAddress") or "").strip(),
     }
 
 

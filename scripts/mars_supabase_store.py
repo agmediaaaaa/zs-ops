@@ -131,8 +131,6 @@ def upsert_to_lead_db(lead: Dict[str, Any]) -> int:
                 "Company Name": lead["company"],
                 "Website": lead["domain"],
                 "company_size": lead["size"],
-                "company_description": "",
-                "location": "",
                 "email_source": lead["email_source"],
                 "email_status": lead["mv_status"],
                 "enrichment_updated_at": datetime.now(timezone.utc).isoformat()
@@ -157,8 +155,6 @@ def upsert_to_lead_db(lead: Dict[str, Any]) -> int:
                 "Company Name": lead["company"],
                 "Website": lead["domain"],
                 "company_size": lead["size"],
-                "company_description": "",
-                "location": "",
                 "email_source": lead["email_source"],
                 "email_status": lead["mv_status"],
                 "enrichment_updated_at": datetime.now(timezone.utc).isoformat()
@@ -178,8 +174,6 @@ def upsert_to_lead_db(lead: Dict[str, Any]) -> int:
         "Company Name": lead["company"],
         "Website": lead["domain"],
         "company_size": lead["size"],
-        "company_description": "",
-        "location": "",
         "email_source": lead["email_source"],
         "email_status": lead["mv_status"],
         "enrichment_updated_at": datetime.now(timezone.utc).isoformat()
@@ -242,11 +236,7 @@ def upsert_to_pipeline_leads(lead: Dict[str, Any], is_catchall: bool = False):
             "industry": lead.get("industry", ""),
             "segment": lead.get("segment", "")
         },
-        "company_description": "",
         "company_industry": lead.get("industry", ""),
-        "company_keywords": "",
-        "company_address": "",
-        "location": "",
         "company_size": lead["size"]
     }
     resp = requests.post(insert_url, headers=HEADERS, json=insert_data)

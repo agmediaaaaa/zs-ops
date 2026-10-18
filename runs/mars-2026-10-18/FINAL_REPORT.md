@@ -258,9 +258,22 @@ the founder/owner title check was applied to the 200-499 band too, which dropped
 - MV: 110 valid, 33 catch-all, 17 invalid
 - After dropping 14 emails already in the list or repeated: 97 valid, 32 catch-all
 - Valid by segment: Seg1 30, Seg2 9, Seg3 13, Seg4 45
-- Cost: Icypeas 0.479, Blitz 0.050, QuickEnrich 0.140, TryKitt 0.125, MillionVerifier 0.192 (about $1.03 for the run)
+- Cost: Icypeas 0.479, Blitz 0.050, QuickEnrich 0.140, TryKitt 0.125, MillionVerifier 0.192 (about $1.07 for the run by treg balance; the script's own tracker showed $0.99)
 
 **Totals for the whole list**
 - Valid 540 (443 + 97), catch-all 165 (133 + 32): `mars_usa_valid_ALL.csv`, `mars_usa_catchall_ALL.csv`
-- Spend $4.225 of the $5.00 cap. treg balance 10.084 -> 5.859
+- Spend $4.75 of the $5.00 cap after the backfill below (treg balance 10.084 -> 5.333). An earlier figure of $4.225 was wrong: it came from a balance read taken before all charges had posted
 - Supabase list `ed9fbb72-4b84-42c2-8dc8-f20f6dbc734a`: 705 members, 705 pipeline_leads (540 ready, 165 excluded as catch-all)
+
+---
+
+## Addendum 2: company description, company address and location backfill
+
+The first Supabase writes left `company_description` and `location` empty: the store scripts hard-coded empty strings
+and the parser did not keep Icypeas' `lastCompanyDescription` and `lastCompanyAddress`. The parser is fixed, the blanks are removed
+from the store scripts, and `scripts/mars_backfill.py` re-pulled the same rows ($0.479) and updated Lead Database and pipeline_leads.
+
+- location: 705 / 705, company_description: 692 / 705, company_address: 694 / 705 (pipeline_leads)
+- The first store script also overwrote these two fields with empty strings on the 171 people who already existed in Lead Database.
+  Only 0.4% of the rest of the table has either field filled, so little was lost, and the backfill has refilled all 171 from Icypeas.
+- Total spend is now $4.75 of the $5.00 cap. Remaining room is about $0.25.
