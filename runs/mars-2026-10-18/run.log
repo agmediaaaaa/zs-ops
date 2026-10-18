@@ -91,7 +91,7 @@ Treg balance: $9.04
 
 
 Enriching 799 leads...
-Cache check error: Invalid header value b'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5wa2RoYWhkdmlsY2N0and6ZGxmIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1Mjc1OTAyNywiZXhwIjoyMDY4MzM1MDI3fQ.LzbvCFk3MTCdbwTU4vZX4FToNXF5IyAdap7VJ4IOoT8\n\n'
+Cache check error: Invalid header value b'[REDACTED]\n\n'
 Cache hits: 0 / 799
   Progress: 50/799 leads enriched
   Progress: 100/799 leads enriched
